@@ -1,10 +1,11 @@
 const simpleStorage = artifacts.require('simpleStorage');
 
 contract('simpleStorage', () => {
-  let ss;
-    it('should deploy smart contract properly', async () => {
-         ss = await ss.deployed();
-         assert(ss.address !== '');
+  let SimpleStorage;
+    it('should return hello world', async () => {
+         simpleStorage = await SimpleStorage();
+         const result = await SimpleStorage.hello();
+         assert(result === 'Hello World');
 
     });
 });
